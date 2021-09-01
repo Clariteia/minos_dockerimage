@@ -14,7 +14,8 @@ RUN pip install -U pip \
 ENV PATH="${PATH}:/root/.poetry/bin"
 
 COPY pyproject.toml ./
-RUN poetry install --no-interaction --no-ansi
+RUN poetry config virtualenvs.in-project true \
+  && poetry install --no-interaction --no-ansi
 
 WORKDIR /microservice
 ENV PYTHONPATH=/microservice:$PYTHONPATH
