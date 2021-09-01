@@ -1,0 +1,24 @@
+name: Upload Docker Image
+
+on:
+  release:
+    types: [ created ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Check out repository code
+        uses: actions/checkout@v2
+
+      - name: Extract release version
+        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/v}" >> $GITHUB_ENV
+
+      - name: Build Image
+        run: docker build -t ghcr.io/clariteia/minos:$RELEASE_VERSION --no-cache .
+
+      - name: Publish package
+        run: docker push ghcr.io/clariteia/minos:$RELEASE_VERSION
+
