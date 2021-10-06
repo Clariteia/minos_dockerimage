@@ -8,8 +8,11 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
-    steps:
+    env:
+      OWNER: clariteia
+      IMAGE_NAME: minos-microservice
 
+    steps:
       - name: Check out repository code
         uses: actions/checkout@v2
 
@@ -17,7 +20,7 @@ jobs:
         run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/v}" >> $GITHUB_ENV
 
       - name: Build Image
-        run: docker build -t ghcr.io/clariteia/minos:$RELEASE_VERSION --no-cache .
+        run: docker build -t ghcr.io/$OWNER/$IMAGE_NAME:$RELEASE_VERSION --no-cache .
 
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v1
@@ -27,5 +30,5 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish package
-        run: docker push ghcr.io/clariteia/minos-microservice:$RELEASE_VERSION
+        run: docker push ghcr.io/$OWNER/$IMAGE_NAME:$RELEASE_VERSION
 
