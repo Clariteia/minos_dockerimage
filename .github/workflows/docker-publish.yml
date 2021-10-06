@@ -27,5 +27,5 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish package
-        run: docker push ghcr.io/clariteia/minos:$RELEASE_VERSION
+        run: docker push ghcr.io/clariteia/minos-microservice:$RELEASE_VERSION
 
