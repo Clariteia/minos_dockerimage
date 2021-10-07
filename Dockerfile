@@ -10,8 +10,8 @@ RUN apt-get update \
 
 # Install and setup poetry
 RUN pip install -U pip \
-    && curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
-ENV PATH="${PATH}:/root/.poetry/bin"
+    && curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | python -
+ENV PATH="${PATH}:/root/.local/bin"
 
 WORKDIR /microservice
 ENV PYTHONPATH=/microservice:$PYTHONPATH
