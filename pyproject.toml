@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "workspace"
+version = "0.1.0"
+description = "This is the workspace microservice."
+authors = ["Clariteia Devs <devs@clariteia.com>"]
+packages = [{ include = "src" }]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+minos-microservice-common = "^0.6"
+minos-microservice-networks = "^0.6"
+minos-microservice-aggregate = "^0.6"
+minos-microservice-saga = "^0.6"
+minos-microservice-cqrs = "^0.6"
+minos-broker-kafka = "^0.6"
+minos-discovery-minos = "^0.6"
+minos-http-aiohttp = "^0.6"
+typer = "^0.3.2"
+SQLAlchemy = "^1.4.0"
+minos-discovery-kong = "^0.1.0-alpha.1"
+
+[tool.poetry.dev-dependencies]
+black = "^19.10b"
+isort = "^5.8.0"
+pytest = "^6.2.4"
+coverage = "^5.5"
+flake8 = "^3.9.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+microservice = "src.cli:main"

@@ -14,4 +14,7 @@ ENV PATH="${PATH}:/root/.local/bin"
 WORKDIR /microservice
 ENV PYTHONPATH=/microservice:$PYTHONPATH
 
-RUN poetry config virtualenvs.in-project true
+RUN poetry config virtualenvs.create false
+COPY ./pyproject.toml .
+RUN poetry install --no-root
+RUN rm ./pyproject.toml
