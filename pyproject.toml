@@ -17,7 +17,6 @@ minos-discovery-minos = "0.6.1"
 minos-http-aiohttp = "0.6.1"
 typer = "^0.3.2"
 SQLAlchemy = "^1.4.0"
-minos-discovery-kong = "0.6.1"
 
 [tool.poetry.dev-dependencies]
 black = "^19.10b"
