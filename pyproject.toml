@@ -7,17 +7,19 @@ packages = [{ include = "src" }]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-minos-microservice-common = "0.7.0.dev1"
-minos-microservice-networks = "0.7.0.dev1"
-minos-microservice-aggregate = "0.7.0.dev1"
-minos-microservice-saga = "0.7.0.dev1"
-minos-microservice-cqrs = "0.7.0.dev1"
-minos-broker-kafka = "0.7.0.dev1"
-minos-discovery-minos = "0.7.0.dev1"
-minos-http-aiohttp = "0.7.0.dev1"
+minos-microservice-common = { version ="^0.7.0*", allow-prereleases = true }
+minos-microservice-networks = { version ="^0.7.0*", allow-prereleases = true }
+minos-microservice-aggregate = { version ="^0.7.0*", allow-prereleases = true }
+minos-microservice-saga = { version ="^0.7.0*", allow-prereleases = true }
+minos-microservice-cqrs = { version ="^0.7.0*", allow-prereleases = true }
+minos-broker-kafka = { version ="^0.7.0*", allow-prereleases = true }
+minos-discovery-minos = { version ="^0.7.0*", allow-prereleases = true }
+minos-http-aiohttp = { version ="^0.7.0*", allow-prereleases = true }
+minos-discovery-kong = { version ="^0.7.0*", allow-prereleases = true }
+minos-database-aiopg = { version ="^0.7.0*", allow-prereleases = true }
+minos-database-lmdb = { version ="^0.7.0*", allow-prereleases = true }
 typer = "^0.3.2"
 SQLAlchemy = "^1.4.0"
-minos-discovery-kong = "0.7.0.dev1"
 
 [tool.poetry.dev-dependencies]
 black = "^19.10b"
