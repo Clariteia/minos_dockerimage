@@ -19,7 +19,7 @@ minos-discovery-kong = { version ="^0.7.0*", allow-prereleases = true }
 minos-database-aiopg = { version ="^0.7.0*", allow-prereleases = true }
 minos-database-lmdb = { version ="^0.7.0*", allow-prereleases = true }
 typer = "^0.3.2"
-SQLAlchemy = "^1.4.0"
+SQLAlchemy = "^1.4.22"
 
 [tool.poetry.dev-dependencies]
 black = "^19.10b"
